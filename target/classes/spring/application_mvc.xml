@@ -15,7 +15,7 @@
     ">
     
     <!-- 注解扫描 -->
-    <context:component-scan base-package="com"></context:component-scan>
+    <context:component-scan base-package="com.crx.quanxian"></context:component-scan>
     
     <!-- 创建 处理器映射器 处理器适配器 视图解析器 处理器 -->
     <!-- 以注解形式来驱动 处理器映射器、 处理器适配器、处理器 -->
@@ -33,7 +33,7 @@
 	</bean>
 
 	<!-- 拦截 静态资源（js、css..） 可配置多个-->
-	<!--<mvc:resources mapping="/res/**" location="/res/**"></mvc:resources>-->
+	<mvc:resources mapping="/res/**" location="/res/**"></mvc:resources>
 	
 	<!-- 拦截器 -->
 	<mvc:interceptors>
@@ -42,7 +42,7 @@
 			<mvc:mapping path="/**"/>
 			<mvc:exclude-mapping path="index.do"/><!--排除映射-->
 			<mvc:exclude-mapping path="login.do"/><!--排除映射-->
-			<!--<bean class="com.crx.quanxian.tools.MyInterceptor"></bean>--><!--拦截器-->
+			<bean class="com.crx.quanxian.tools.MyInterceptor"></bean><!--拦截器-->
 		</mvc:interceptor>
 	</mvc:interceptors>
 	
