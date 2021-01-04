@@ -6,7 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="gitRespostory" />
+        <module name="CrxCrm" />
+        <module name="crm" />
       </profile>
     </annotationProcessing>
   </component>
