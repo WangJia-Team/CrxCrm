@@ -63,9 +63,9 @@
 	
 	<!-- Aop 配置事务为切面 -->
 	<aop:config>
-		<!--<aop:pointcut expression="execution(* com.crx.quanxian.service.*.*(..))" id="pointCut"/>-->
+		<aop:pointcut expression="execution(* com.crx.quanxian.service.*.*(..))" id="pointCut"/>
 		<!-- 声明事务作为切面 -->
-		<!--<aop:advisor advice-ref="txadvice" pointcut-ref="pointCut"/>-->
+		<aop:advisor advice-ref="txadvice" pointcut-ref="pointCut"/>
 	</aop:config>
 	
 	
