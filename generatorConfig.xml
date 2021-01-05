@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+	<context id="mysqlTables" targetRuntime="MyBatis3">
+		<!-- 配置数据库连接 -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/crx"
+			userId="root" password="root">
+		</jdbcConnection>
+
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+		<!-- 配置java Model生成 -->
+		<javaModelGenerator
+			targetPackage="com.kakarote.crm9.erp.approval.model" targetProject=".\src\main\java">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+		<!-- 配置mapper.xml文件生成 -->
+		<sqlMapGenerator targetPackage="approvalmapper"
+			targetProject=".\src\main\resources">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+		<!-- 配置Mapper.java 接口生成 -->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.kakarote.crm9.erp.approval.dao" targetProject=".\src\main\java">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+
+		<!-- 指定要生成的表名 -->
+		<table tableName="user"></table>
+		<table tableName="task"></table>
+		<table tableName="customer"></table>
+		<table tableName="user_customer"></table>
+		<table tableName="user_task"></table>
+		<table tableName="customer_task"></table>
+
+	</context>
+</generatorConfiguration>
