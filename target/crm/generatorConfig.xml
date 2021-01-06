@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+  <context id="mysqlTables" targetRuntime="MyBatis3">
+  	<!-- 配置数据库连接 -->
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+        connectionURL="jdbc:mysql://localhost:3306/crx_crm"
+        userId="root"
+        password="123456789chao">
+    </jdbcConnection>
+
+    <javaTypeResolver >
+      <property name="forceBigDecimals" value="false" />
+    </javaTypeResolver>
+	<!-- 配置java Model生成 -->
+    <javaModelGenerator targetPackage="com.kakarote.crm9.erp.backlog.model" targetProject="src/main/java">
+      <property name="enableSubPackages" value="true" />
+      <property name="trimStrings" value="true" />
+    </javaModelGenerator>
+	<!-- 配置mapper.xml文件生成 -->
+    <sqlMapGenerator targetPackage="backlogMapper"  targetProject=".\resources\mapper">
+      <property name="enableSubPackages" value="true" />
+    </sqlMapGenerator>
+	<!-- 配置Mapper.java 接口生成 -->
+    <javaClientGenerator type="XMLMAPPER" targetPackage="com.kakarote.crm9.erp.backlog.dao"  targetProject="src/main/java">
+      <property name="enableSubPackages" value="true" />
+    </javaClientGenerator> 
+	 
+  <table tableName="client"></table>
+
+
+  </context>
+</generatorConfiguration>
