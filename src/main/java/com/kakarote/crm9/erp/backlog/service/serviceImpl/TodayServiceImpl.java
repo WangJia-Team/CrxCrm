@@ -6,7 +6,6 @@ import com.kakarote.crm9.erp.backlog.model.ClientExample;
 import com.kakarote.crm9.erp.backlog.service.TodayService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
@@ -14,7 +13,9 @@ public class TodayServiceImpl implements TodayService {
     @Autowired
     private ClientMapper mapper;
 
-    public List<Client> selectByExample(){
+
+    @Override
+    public List<Client> selectClientList() {
         return mapper.selectByExample(new ClientExample());
     }
 }

@@ -13,11 +13,11 @@ import java.util.List;
 public class TodayController {
     @Autowired
     private TodayService service;
-    @RequestMapping()
+    @RequestMapping("quchaofan.do")
     public ModelAndView view(ModelAndView modelAndView){
         List<Client> list = service.selectClientList();
         modelAndView.addObject("list",list);
-        modelAndView.setViewName("/");
-        return null;
+        modelAndView.setViewName("/quchaofan/quchaofan");
+        return modelAndView;
     }
 }
