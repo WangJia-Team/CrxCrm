@@ -41,6 +41,11 @@ public class UserServiceImpl implements UserService {
         return mess;
     }
 
+    /**
+     * 用户退出：会话失效
+     * @param request
+     * @return
+     */
     @Override
     public String logout(HttpServletRequest request) {
         HttpSession session = request.getSession();
