@@ -18,17 +18,18 @@ public class LoginController {
 
     /**
      * 初始化
+     * 
      * @return 登陆界面
      */
     @RequestMapping("indexLogin")
-    public String show(){
+    public String show() {
         return "login/login_user";
     }
 
     @RequestMapping("login")
     @ResponseBody
-    public Message login(LoginUser user  , HttpServletRequest request){
+    public Message login(LoginUser user, HttpServletRequest request) {
         Message message = new Message();
-        return service.login(user , request , message);
+        return service.login(user, request, message);
     }
 }

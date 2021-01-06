@@ -11,6 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-Hellow Word
+<h1>Hellow Word</h1>
 </body>
 </html>
