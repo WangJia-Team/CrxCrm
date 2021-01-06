@@ -30,7 +30,8 @@
       <property name="enableSubPackages" value="true" />
     </javaClientGenerator> 
 	 
-   <table tableName="log"></table>
+   <table tableName="wj_admin_user"></table>
+   <table tableName="wj_admin_dept"></table>
 
 
   </context>

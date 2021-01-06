@@ -23,8 +23,7 @@ $(function () {
             dataType: "json",
             data: {
                 username: $("#uname").val(),
-                pwd: $("#pwd").val()
-
+                password: $("#pwd").val()
             },
             success: function (data) {
                 if (data.mess == "success") {
@@ -49,13 +48,13 @@ $(function () {
         <div class="form-group">
             <label for="uname" class="col-sm-2 control-label">用户名</label>
             <div class="col-sm-10">
-                <input name="username" type="text" class="form-control" id="uname" placeholder="Username">
+                <input name="username" type="text" class="form-control" id="uname" placeholder="用户名">
             </div>
         </div>
         <div class="form-group">
             <label for="pwd" class="col-sm-2 control-label">密码</label>
             <div class="col-sm-10">
-                <input name="pwd" type="password" class="form-control" id="pwd" placeholder="Password">
+                <input name="password" type="password" class="form-control" id="pwd" placeholder="密码">
             </div>
         </div>
         <div class="form-group">

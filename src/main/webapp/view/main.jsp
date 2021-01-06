@@ -8,9 +8,20 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>主页</title>
 </head>
+<style type="text/css">
+    p {
+        text-align: center;
+    }
+</style>
 <body>
-<h1>Hellow Word</h1>
+<h2 style="text-align: center;padding-top: 200px">Hello World!</h2>
+<p>用户名：${user.realname}</p>
+<p>员工编号：${user.num}</p>
+<p>手机号：${user.mobile}</p>
+<p>邮箱：${user.email}</p>
+<p>ip地址：${user.lastLoginIp}</p>
+<p>上一次登录时间：${user.lastLoginTime}</p>
 </body>
 </html>
