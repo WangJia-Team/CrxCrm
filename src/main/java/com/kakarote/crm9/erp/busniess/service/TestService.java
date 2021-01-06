@@ -1,4 +1,4 @@
-package com.kakarote.crm9.erp.bussniess.service;
+package com.kakarote.crm9.erp.busniess.service;
 
 public class TestService {
     public static void main(String[] args) {

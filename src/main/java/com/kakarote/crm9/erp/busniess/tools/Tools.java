@@ -1,4 +1,4 @@
-package com.kakarote.crm9.erp.bussniess.tools;
+package com.kakarote.crm9.erp.busniess.tools;
 
 public class Tools {
     public static void main(String[] args) {

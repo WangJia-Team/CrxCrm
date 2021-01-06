@@ -1,4 +1,4 @@
-package com.kakarote.crm9.erp.bussniess.dao;
+package com.kakarote.crm9.erp.busniess.dao;
 
 public class TestDao {
     public static void main(String[] args) {
