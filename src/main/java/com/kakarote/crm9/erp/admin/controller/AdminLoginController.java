@@ -29,5 +29,10 @@ public class AdminLoginController {
     public Message login(WjAdminUser user, HttpServletRequest request) {
         return service.login(user, request);
     }
+    
+    @RequestMapping("logout")
+    public String logout(HttpServletRequest request) {
+        return service.logout(request);
+    }
 
 }

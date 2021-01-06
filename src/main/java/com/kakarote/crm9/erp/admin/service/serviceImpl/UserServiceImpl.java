@@ -40,4 +40,12 @@ public class UserServiceImpl implements UserService {
         }
         return mess;
     }
+
+    @Override
+    public String logout(HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        session.removeAttribute("user");
+        session.invalidate();
+        return "login/login_user";
+    }
 }

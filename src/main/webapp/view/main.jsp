@@ -11,7 +11,7 @@
     <title>主页</title>
 </head>
 <style type="text/css">
-    p {
+    * {
         text-align: center;
     }
 </style>
@@ -23,5 +23,6 @@
 <p>邮箱：${user.email}</p>
 <p>ip地址：${user.lastLoginIp}</p>
 <p>上一次登录时间：${user.lastLoginTime}</p>
+<a href="/CrxCrm/logout.do">退出登录</a>
 </body>
 </html>

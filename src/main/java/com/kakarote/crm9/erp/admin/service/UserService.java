@@ -7,4 +7,6 @@ import javax.servlet.http.HttpServletRequest;
 
 public interface UserService {
     Message login(WjAdminUser user, HttpServletRequest request);
+
+    String logout(HttpServletRequest request);
 }
