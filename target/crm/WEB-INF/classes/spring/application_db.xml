@@ -33,12 +33,12 @@
 		<!-- 加载数据源（环境） -->
 		<property name="dataSource" ref="dataSource"></property>
 		<!-- 扫描XxxMapper.xml文件的位置 --><!-- mapper的xml和java文件分离 -->
-		<property name="mapperLocations" value="classpath:mapper/adminmapper/*.xml"></property>
+		<property name="mapperLocations" value="classpath:mapper/*.xml"></property>
 	</bean>
 	
 	<!-- mapper 扫描 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.kakarote.crm9.erp.admin.dao"></property>
+		<property name="basePackage" value="com.crx.quanxian.dao"></property>
 		<!-- 通过代理SqlSession（方法名要与.xml里的id一样） -->
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
 	</bean>
@@ -63,9 +63,9 @@
 	
 	<!-- Aop 配置事务为切面 -->
 	<aop:config>
-		<aop:pointcut expression="execution(* com.kakarote.crm9.erp.admin.service.*.*(..))" id="pointCut"/>
+		<!--<aop:pointcut expression="execution(* com.crx.quanxian.service.*.*(..))" id="pointCut"/>-->
 		<!-- 声明事务作为切面 -->
-		<aop:advisor advice-ref="txadvice" pointcut-ref="pointCut"/>
+		<!--<aop:advisor advice-ref="txadvice" pointcut-ref="pointCut"/>-->
 	</aop:config>
 	
 	
