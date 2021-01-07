@@ -17,25 +17,25 @@
       <property name="forceBigDecimals" value="false" />
     </javaTypeResolver>
 	<!-- 配置java Model生成 -->
-    <javaModelGenerator targetPackage="com.kakarote.crm9.erp.busniess.model" targetProject=".\src\main\java">
+    <javaModelGenerator targetPackage="com.kakarote.crm9.erp.approval.model" targetProject=".\src\main\java">
       <property name="enableSubPackages" value="true" />
       <property name="trimStrings" value="true" />
     </javaModelGenerator>
 	<!-- 配置mapper.xml文件生成 -->
-    <sqlMapGenerator targetPackage="busniessMapper"  targetProject=".\src\main\resources\mapper\busniessMapper">
+    <sqlMapGenerator targetPackage="mapper.approvalmapper"  targetProject=".\src\main\resources">
       <property name="enableSubPackages" value="true" />
     </sqlMapGenerator>
 	<!-- 配置Mapper.java 接口生成 -->
-    <javaClientGenerator type="XMLMAPPER" targetPackage="com.kakarote.crm9.erp.busniess.dao"  targetProject=".\src\main\java">
+    <javaClientGenerator type="XMLMAPPER" targetPackage="com.kakarote.crm9.erp.approval.dao"  targetProject=".\src\main\java">
       <property name="enableSubPackages" value="true" />
     </javaClientGenerator> 
-	 
-   <table tableName="busniess"></table>
-    <table tableName="business_change"></table>
-    <table tableName="business_product"></table>
-    <table tableName="business_status"></table>
-    <table tableName="business_type"></table>
-    <table tableName="contacts_business"></table>
+    
+    <table tableName="sq_priority"></table>
+    <table tableName="sq_state"></table>
+    <table tableName="sq_task"></table>
+    <table tableName="sq_type"></table>
+    <table tableName="sq_user_task"></table>
+    <table tableName="sq_user_user"></table>
 
 
   </context>
