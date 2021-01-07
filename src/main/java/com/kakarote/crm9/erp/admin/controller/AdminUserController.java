@@ -10,29 +10,22 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 
-/**
- * 用户登录
- */
 @Controller
-public class AdminLoginController {
+public class AdminUserController {
 
     @Autowired
     private UserService service;
 
-    @RequestMapping("index")
-    public String show() {
-        return "login/login_user";
-    }
-
-    @RequestMapping("login")
+    @RequestMapping("addUser")
     @ResponseBody
-    public Message login(WjAdminUser user, HttpServletRequest request) {
-        return service.login(user, request);
+    public Message addUser(WjAdminUser user, HttpServletRequest request) {
+        return service.addUser(user, request);
     }
 
-    @RequestMapping("logout")
-    public String logout(HttpServletRequest request) {
-        return service.logout(request);
+    @RequestMapping("userView")
+    public String userView(HttpServletRequest request) {
+        return service.userView(request);
     }
+
 
 }

@@ -3,6 +3,7 @@ package com.kakarote.crm9.erp.admin.service.serviceImpl;
 import com.kakarote.crm9.erp.admin.dao.Message;
 import com.kakarote.crm9.erp.admin.dao.WjAdminUserMapper;
 import com.kakarote.crm9.erp.admin.model.WjAdminUser;
+import com.kakarote.crm9.erp.admin.model.WjAdminUserExample;
 import com.kakarote.crm9.erp.admin.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -52,5 +54,30 @@ public class UserServiceImpl implements UserService {
         session.removeAttribute("user");
         session.invalidate();
         return "login/login_user";
+    }
+
+    /**
+     * 新增员工
+     * @param user
+     * @param request
+     * @return
+     */
+    @Override
+    public Message addUser(WjAdminUser user, HttpServletRequest request) {
+        mapper.insertSelective(user);
+        Message mess = new Message();
+        mess.setMess("success");
+        return mess;
+    }
+
+    /**
+     * 查看所有员工
+     * @return
+     */
+    @Override
+    public String userView(HttpServletRequest request) {
+        List<WjAdminUser> list = mapper.selectByExample(new WjAdminUserExample());
+        request.setAttribute("userView",list);
+        return "forward:view/admin/view.jsp";
     }
 }
