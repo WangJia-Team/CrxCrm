@@ -49,7 +49,7 @@ $(function () {
 })
 </script>
 <body>
-<div style="margin: 150px;padding-right: 500px;padding-left: 500px">
+<div style="margin:500px;width: 500px;height: 1000px"   >
 <form>
     <div class="form-group">
         <label for="mobile"><span>*</span>手机号（登录名）</label>
