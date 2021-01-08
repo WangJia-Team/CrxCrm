@@ -13,7 +13,6 @@ import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -59,7 +58,7 @@ public class AdminUserServiceImpl implements AdminUserService {
     @Override
     public String logout(HttpServletRequest request) {
         HttpSession session = request.getSession();
-        session.removeAttribute("user");
+        session.removeAttribute("user");//用户
         session.invalidate();
         return "login/login_user";
     }
@@ -73,6 +72,7 @@ public class AdminUserServiceImpl implements AdminUserService {
      */
     @Override
     public Message addUser(WjAdminUser user, HttpServletRequest request) {
+        user.setCreateTime(new Date());
         mapper.insertSelective(user);
         Message mess = new Message();
         mess.setMess("success");
@@ -104,6 +104,6 @@ public class AdminUserServiceImpl implements AdminUserService {
         HttpSession session = request.getSession();
         session.setAttribute("userView", list);
         session.setAttribute("depts", depts);
-        return "forward:view/admin/view.jsp";
+        return "redirect:view/admin/view.jsp";
     }
 }
