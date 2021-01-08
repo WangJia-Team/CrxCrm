@@ -36,9 +36,19 @@
         <td>${vas.count}</td>
         <td>${u.realname}</td>
         <td>${u.mobile}</td>
-        <td>${u.sex}</td>
+        <c:if test="${u.sex eq 0}">
+            <td></td>
+        </c:if>
+        <c:if test="${u.sex eq 1}">
+            <td>男</td>
+        </c:if>
+        <c:if test="${u.sex eq 2}">
+            <td>女</td>
+        </c:if>
         <td>${u.email}</td>
-        <td>暂无</td>
+    <c:forEach items="${depts}" var="d">
+        <c:if test="${u.deptId eq d.deptId}"><td>${d.name}</td></c:if>
+    </c:forEach>
         <td>暂无</td>
         <td>暂无</td>
         <td>暂无</td>
