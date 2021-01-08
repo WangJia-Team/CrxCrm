@@ -21,6 +21,7 @@
 <script src="<c:url value="/res/jquery-3.5.1.min.js"/>"></script>
 <script>
 $(function () {
+    
     $("#btn").click(function () {
         $.ajax({
             type: "post",
@@ -33,7 +34,7 @@ $(function () {
                 mobile: $("#mobile").val(),
                 email: $("#email").val(),
                 sex: $("#sex").val(),
-                parentId: $("#parentId").val()//待更新
+                deptId: $("#deptId").val()
             },
             success: function (data) {
                 if (data.mess == "success") {
@@ -49,7 +50,7 @@ $(function () {
 })
 </script>
 <body>
-<div style="margin:500px;width: 500px;height: 1000px"   >
+<div style="margin:200px;width: 500px;height: 1000px"   >
 <form>
     <div class="form-group">
         <label for="mobile"><span>*</span>手机号（登录名）</label>
@@ -69,11 +70,19 @@ $(function () {
     </div>
     <div class="form-group">
         <label for="sex">性别</label>
-        <input type="text" class="form-control" id="sex" placeholder="性别">
+        <select id="sex" class="form-control">
+            <option value="0">请选择</option>
+            <option value="1">男</option>
+            <option value="2">女</option>
+        </select>
     </div>
     <div class="form-group">
-        <label for="a"><span>*</span>部门</label>
-        <input type="text" class="form-control" id="a" placeholder="部门">
+        <label for="deptId"><span>*</span>部门</label>
+        <select id="deptId" class="form-control">
+            <c:forEach items="${depts}" var="d">
+                <option value="${d.deptId}">${d.name}</option>
+            </c:forEach>
+        </select>
     </div>
     <div class="form-group">
         <label for="b">岗位</label>

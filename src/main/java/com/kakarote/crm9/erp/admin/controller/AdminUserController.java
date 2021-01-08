@@ -2,7 +2,7 @@ package com.kakarote.crm9.erp.admin.controller;
 
 import com.kakarote.crm9.erp.admin.dao.Message;
 import com.kakarote.crm9.erp.admin.model.WjAdminUser;
-import com.kakarote.crm9.erp.admin.service.UserService;
+import com.kakarote.crm9.erp.admin.service.AdminUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 public class AdminUserController {
 
     @Autowired
-    private UserService service;
+    private AdminUserService service;
 
     @RequestMapping("addUser")
     @ResponseBody
