@@ -9,6 +9,9 @@
 <html>
 <head>
     <title>新建商机</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
     <style type="text/css">
         html,body{
             margin: 0px;
@@ -43,27 +46,29 @@
             z-index: 2;
         }
     </style>
-    <script type="text/javascript">
+    <script src="${pageContext.request.contextPath}/res/jquery-3.5.1.min.js"></script>
+    <script>
+
         $(function () {
             $("#bc").click(function () {
                 $.ajax({
                     type: "post",
-                    url: "/CrxCrm/under.do",
+                    url: "${pageContext.request.contextPath}/save.do",
                     dataType: "json",
                     data: {
                         bname: $("#bname").val(),
-                        cname:$("#cname" ).val(),
+                        cname:$("#cname").val(),
                         tid:$("#tid" ).val(),
-                        is_end:$("#is_end" ).val(),
+                        is_end:$("#is_end").val(),
                         money:$("#money" ).val(),
-                        deal_date:$("#deal_date" ).val(),
+                        deal_date:$("#deal_date").val(),
                         remark:$("#remark" ).val(),
-                        discount_rate:$("#discount_rate" ).val(),
-                        cpmoney:$("#cpmoney" ).val(),
+                        discount_rate:$("#discount_rate").val(),
+                        cpmoney:$("#cpmoney" ).val()
                     },
                     success: function (data) {
-                        if (data.mess == "success") {
-                            location = "/CrxCrm/shangji/under.jsp"
+                        if (data.message == "success") {
+                            location = "/CrxCrm/shangji/under.jsp";
                         } else {
                             alert("错误");
                         }
@@ -109,7 +114,7 @@
         ------------
         产品总金额:<input name="cpmoney" id="cpmoney" type="text" placeholder="请输入" style="width:75px; height:20px; " >元</br>
 
-        <button type="button"  style="background-color: #00E8D7;" id="bc">保存</button>
+        <button id="bc" type="button" class="btn btn-default">提交</button>
 
         <button type="button" style="background-color: #AF2018;float:right">取消</button>
     </form>
