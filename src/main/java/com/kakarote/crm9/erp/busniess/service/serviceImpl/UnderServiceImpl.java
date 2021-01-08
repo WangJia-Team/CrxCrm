@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,11 +35,14 @@ public class UnderServiceImpl implements UnderService {
      * 查看所有商机
      * @return
      */
+
+
     @Override
-    public String UnderView(Business business,HttpServletRequest request) {
+    public String view(Business business, HttpServletRequest request) {
         List<Business> list = mapper.selectByExample(new BusinessExample());
-        request.setAttribute("list",list);
-        return this.UnderView(business, request);
+        HttpSession session = request.getSession();
+        session.setAttribute("list", list);
+        return "redirect:shangji/sjview.jsp";
     }
 
 

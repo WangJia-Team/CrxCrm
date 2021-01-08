@@ -17,17 +17,17 @@ public class SjUnderController {
     private UnderService service;
 
 
-    @RequestMapping("UnderView")
+    @RequestMapping("sjview.do")
     @ResponseBody
-    public String UnderView(Business business, HttpServletRequest request) {
+    public String view(Business business, HttpServletRequest request) {
 
-        return service.UnderView(business,request);
+        return service.view(business,request);
     }
 
 
-    @RequestMapping("save")
+    @RequestMapping("save.do")
     @ResponseBody
-    public Message save(HttpServletRequest request,Business  business){
+    public Message bulid(HttpServletRequest request,Business  business){
 
         return service.save(business,request);
     }

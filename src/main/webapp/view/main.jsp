@@ -23,6 +23,7 @@
 <p>邮箱：${user.email}</p>
 <p>ip地址：${user.lastLoginIp}</p>
 <p>上一次登录时间：${user.lastLoginTime}</p>
+<a href="/CrxCrm/sjview.do">查看商机</a>
 <a href="/CrxCrm/userView.do">查看员工</a>
 <a href="/CrxCrm/logout.do">退出登录</a>
 </body>

@@ -19,7 +19,7 @@
         .foot{position:absolute; height:100px;bottom:0px; background:aliceblue;}
     </style>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Insert title here</title>
+    <title>商机管理</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="${pageContext.request.contextPath}/res/jquery-3.5.1.min.js"></script>
@@ -30,7 +30,7 @@
     <b style="margin:20px 50px 75px;">商机管理</b>
     <input style="margin:20px 0px 75px 230px;"  type="text" name="search" placeholder="请输入商机名称" >
     <input type="button" value="搜索" class="cc">
-    <a href="/CrxCrm/shangji/bulid.jsp">新建商机</a>
+    <a href="/CrxCrm/shangji/save.jsp">新建商机</a>
 </div>
 <div class="nav">
     <table class="table table-bordered">
@@ -55,11 +55,11 @@
                 <td>${b.tid}</td>
                 <td>${b.cjid}</td>
                 <td>${b.cname}</td>
-                <td>${b.is_end}</td>
-                <td>${b.create_time}</td>
+                <td>${b.isEnd}</td>
+                <td>${b.createTime}</td>
                 <td>${b.bname}</td>
-                <td>${b.deal_date}</td>
-                <td>${b.update_time}</td>
+                <td>${b.dealDate}</td>
+                <td>${b.updateTime}</td>
             </tr>
         </c:forEach>
     </table>
