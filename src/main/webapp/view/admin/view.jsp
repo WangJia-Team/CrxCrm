@@ -16,7 +16,7 @@
 <script src="<c:url value="/res/jquery-3.5.1.min.js"/>"></script>
 <body>
 <div style="margin: 100px">
-    <a href="/CrxCrm/view/admin/addUser.jsp">新建员工</a>
+    <a href="${pageContext.request.contextPath}/view/admin/addUser.jsp">新建员工</a>
 </div>
 <div style="margin-left: 150px">
 <table class="table table-hover">

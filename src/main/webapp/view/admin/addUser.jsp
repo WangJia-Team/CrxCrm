@@ -25,7 +25,7 @@ $(function () {
     $("#btn").click(function () {
         $.ajax({
             type: "post",
-            url: "/CrxCrm/addUser.do",
+            url: "${pageContext.request.contextPath}/admin/addUser.do",
             dataType: "json",
             data: {
                 username: $("#mobile").val(),
@@ -38,7 +38,7 @@ $(function () {
             },
             success: function (data) {
                 if (data.mess == "success") {
-                    location = "/CrxCrm/userView.do";
+                    location = "${pageContext.request.contextPath}/admin/userView.do";
                 } else {
                     alert("错误");
                 }
@@ -50,7 +50,7 @@ $(function () {
 })
 </script>
 <body>
-<div style="margin:200px;width: 500px;height: 1000px"   >
+<div style="margin:200px;width: 500px;height: 1000px">
 <form>
     <div class="form-group">
         <label for="mobile"><span>*</span>手机号（登录名）</label>

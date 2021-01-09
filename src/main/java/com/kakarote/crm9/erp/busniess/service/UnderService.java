@@ -8,7 +8,10 @@ import javax.servlet.http.HttpServletRequest;
 public interface UnderService {
 
 
-    String UnderView(Business business,HttpServletRequest request);
+
     Message  save(Business  business,HttpServletRequest request);
 
+
+
+    String view(Business business, HttpServletRequest request);
 }

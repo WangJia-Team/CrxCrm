@@ -59,16 +59,16 @@
                         bname: $("#bname").val(),
                         cname:$("#cname").val(),
                         tid:$("#tid" ).val(),
-                        is_end:$("#is_end").val(),
+                        isEnd:$("#isEnd").val(),
                         money:$("#money" ).val(),
-                        deal_date:$("#deal_date").val(),
+                        dealDate:$("#dealDate").val(),
                         remark:$("#remark" ).val(),
-                        discount_rate:$("#discount_rate").val(),
+                        discountRate:$("#discountRate").val(),
                         cpmoney:$("#cpmoney" ).val()
                     },
                     success: function (data) {
                         if (data.message == "success") {
-                            location = "/CrxCrm/shangji/under.jsp";
+                            location = "/CrxCrm/shangji/sjview.do";
                         } else {
                             alert("错误");
                         }
@@ -98,19 +98,19 @@
         <option>电子产品销售流程</option>
         </select>
         ----------
-        商机阶段:<select placeholder="请选择" name="is_end" id="is_end"  style="width:200px; height:20px;">
+        商机阶段:<select placeholder="请选择" name="isEnd" id="isEnd"  style="width:200px; height:20px;">
         <option>赢单</option>
         <option>输单</option>
         <option>无效</option>
         </select></br>
         商机金额(元):<input name="money" id="money" type="text" placeholder="请输入金额" style="width:200px; height:20px;" >
         -----
-        预计成交日期:<input name="deal_date" id="deal_date" type="datetime-local" placeholder="请选择日期" style="width:200px; height:20px;" ></br>
+        预计成交日期:<input name="dealDate" id="dealDate" type="datetime-local" placeholder="请选择日期" style="width:200px; height:20px;" ></br>
 
         <textarea name="remark" id="remark" clos="20" rows="5" >备注:</textarea></br>
         产品:
         <button type="button"  style="background-color: #00b7ee;float:right" >添加产品</button></br>
-        整单折扣%:<input name="discount_rate" id="discount_rate" type="number" placeholder="请输入" style="width:75px; height:20px;" >
+        整单折扣%:<input name="discountrate" id="discountrate" type="number" placeholder="请输入" style="width:75px; height:20px;" >
         ------------
         产品总金额:<input name="cpmoney" id="cpmoney" type="text" placeholder="请输入" style="width:75px; height:20px; " >元</br>
 
