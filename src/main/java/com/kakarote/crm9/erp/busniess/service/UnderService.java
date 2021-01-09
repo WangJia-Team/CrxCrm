@@ -4,6 +4,7 @@ import com.kakarote.crm9.erp.admin.dao.Message;
 import com.kakarote.crm9.erp.busniess.model.Business;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 public interface UnderService {
 
@@ -13,5 +14,5 @@ public interface UnderService {
 
 
 
-    String view(Business business, HttpServletRequest request);
+    List<Business> view(Business business, HttpServletRequest request);
 }

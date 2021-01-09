@@ -17,7 +17,12 @@
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
     <init-param>
       <param-name>contextConfigLocation</param-name>
-      <param-value>classpath:spring/AdminSpring/application_mvc.xml</param-value>
+      <param-value>
+        <!--classpath:spring/AdminSpring/application_mvc.xml,-->
+       classpath:spring/BiSpring/application_mvc.xml
+
+
+      </param-value>
     </init-param>
   </servlet>
   <!--字符的过滤 -->
@@ -46,7 +51,11 @@
 
   <context-param>
     <param-name>contextConfigLocation</param-name>
-    <param-value>classpath:spring/AdminSpring/application_db.xml</param-value>
+    <param-value>
+    <!-- classpath:spring/AdminSpring/application_db.xml,-->
+     classpath:spring/BiSpring/application_db.xml
+
+    </param-value>
   </context-param>
   
 </web-app>
