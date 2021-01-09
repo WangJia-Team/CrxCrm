@@ -5,9 +5,8 @@
          id="WebApp_ID" version="3.1">
   <display-name>SSMProject</display-name>
   <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.do</welcome-file>
     <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
     <welcome-file>default.html</welcome-file>
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
@@ -18,7 +17,10 @@
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
     <init-param>
       <param-name>contextConfigLocation</param-name>
-      <param-value>classpath:spring/ApprovalSpring/application_mvc.xml</param-value>
+      <param-value>
+        classpath:spring/AdminSpring/application_mvc.xml,
+        classpath:spring/ApprovalSpring/application_mvc.xml
+      </param-value>
     </init-param>
   </servlet>
   <!--字符的过滤 -->
@@ -47,7 +49,10 @@
 
   <context-param>
     <param-name>contextConfigLocation</param-name>
-    <param-value>classpath:spring/ApprovalSpring/application_db.xml</param-value>
+    <param-value>
+      classpath:spring/AdminSpring/application_db.xml,
+      classpath:spring/ApprovalSpring/application_db.xml
+    </param-value>
   </context-param>
   
 </web-app>

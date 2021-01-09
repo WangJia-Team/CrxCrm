@@ -8,9 +8,22 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>主页</title>
 </head>
+<style type="text/css">
+    * {
+        text-align: center;
+    }
+</style>
 <body>
-Hellow Word
+<h2 style="text-align: center;padding-top: 200px">Hello World!</h2>
+<p>用户名：${user.realname}</p>
+<p>员工编号：${user.num}</p>
+<p>手机号：${user.mobile}</p>
+<p>邮箱：${user.email}</p>
+<p>ip地址：${user.lastLoginIp}</p>
+<p>上一次登录时间：${user.lastLoginTime}</p>
+<a href="/CrxCrm/userView.do">查看员工</a>
+<a href="/CrxCrm/logout.do">退出登录</a>
 </body>
 </html>
