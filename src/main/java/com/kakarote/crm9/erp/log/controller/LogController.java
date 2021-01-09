@@ -21,6 +21,8 @@ public class LogController {
 
     @RequestMapping("log/main")
     public String show(){
+
+        System.out.println("sss");
         return "main";
     }
 
