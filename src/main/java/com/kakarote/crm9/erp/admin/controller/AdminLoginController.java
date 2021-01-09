@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
  * 用户登录
  */
 @Controller
+@RequestMapping("admin/")
 public class AdminLoginController {
 
     @Autowired

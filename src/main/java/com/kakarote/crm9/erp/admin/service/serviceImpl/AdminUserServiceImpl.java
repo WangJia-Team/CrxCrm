@@ -104,6 +104,6 @@ public class AdminUserServiceImpl implements AdminUserService {
         HttpSession session = request.getSession();
         session.setAttribute("userView", list);
         session.setAttribute("depts", depts);
-        return "redirect:view/admin/view.jsp";
+        return "redirect:/view/admin/view.jsp";
     }
 }
