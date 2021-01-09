@@ -1,7 +1,4 @@
-package com.kakarote.crm9.erp.bi.common;
-
-import javax.sound.midi.Soundbank;
-import java.sql.SQLOutput;
+package com.kakarote.crm9.erp.bi.dao;
 
 public class testCom {
     public static void main(String[] args) {
