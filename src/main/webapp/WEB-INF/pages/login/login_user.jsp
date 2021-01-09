@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Title</title>
@@ -19,7 +19,7 @@ $(function () {
     $("#btn").click(function () {
         $.ajax({
             type: "post",
-            url: "/CrxCrm/login.do",
+            url: "${pageContext.request.contextPath}/admin/login.do",
             dataType: "json",
             data: {
                 username: $("#uname").val(),
@@ -27,7 +27,7 @@ $(function () {
             },
             success: function (data) {
                 if (data.mess == "success") {
-                    location = "/CrxCrm/view/main.jsp"
+                    location = "${pageContext.request.contextPath}/view/main.jsp"
                 } else {
                     alert("错误");
                 }
