@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+	http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+	http://www.springframework.org/schema/tx
+    http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
+	http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-4.3.xsd
+    ">
+
+    <!-- 加载配置文件 -->
+    <context:property-placeholder location="classpath:db.properties"/>
+
+	<context:component-scan base-package="com.kakarote.crm9.erp.busniess"></context:component-scan>
+    
+    <!-- 这些配置Spring在启动时会去db.properties中找 -->
+    <!-- 创建数据源 -->
+   	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+   		<property name="driverClassName" value="${jdbc.driver}"></property>
+   		<property name="url" value="${jdbc.url}"></property>
+   		<property name="username" value="${jdbc.username}"></property>
+   		<property name="password" value="${password}"></property>
+   	</bean>
+    
+    <!-- 工厂模式创建SqlSessionFactory -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<!-- 加载sqlMapConfig.xml文件 -->
+		<property name="configLocation" value="classpath:mybaties/sqlMapConfig.xml"></property>
+		<!-- 加载数据源（环境） -->
+		<property name="dataSource" ref="dataSource"></property>
+		<!-- 扫描XxxMapper.xml文件的位置 --><!-- mapper的xml和java文件分离 -->
+		<property name="mapperLocations" value="classpath:mapper/busniessMapper/*.xml"/>
+	</bean>
+	
+	<!-- mapper 扫描 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.kakarote.crm9.erp.busniess.dao"/>
+		<!-- 通过代理SqlSession（方法名要与.xml里的id一样） -->
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
+	</bean>
+	
+	<!-- 创建事务管理者 -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<!-- 给予数据源处理此数据源的事务 -->
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	
+	<!-- 事务的增强（事务的具体应用） -->
+	<tx:advice id="txadvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="save*" propagation="REQUIRED"/>
+			<tx:method name="delete*" propagation="REQUIRED"/>
+			<tx:method name="insert*" propagation="REQUIRED"/>
+			<tx:method name="update*" propagation="REQUIRED"/>
+			<!-- 不开启select*的事务 并且只读 -->
+			<tx:method name="select*" propagation="NOT_SUPPORTED" read-only="true"/>
+		</tx:attributes>
+	</tx:advice>
+	
+	<!-- Aop 配置事务为切面 -->
+	<aop:config>
+		<!--<aop:pointcut expression="execution(* com.crx.quanxian.service.*.*(..))" id="pointCut"/>-->
+		<!-- 声明事务作为切面 -->
+		<!--<aop:advisor advice-ref="txadvice" pointcut-ref="pointCut"/>-->
+	</aop:config>
+	
+	
+	
+	
+	
+</beans>

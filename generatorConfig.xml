@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+  <context id="mysqlTables" targetRuntime="MyBatis3">
+  	<!-- 配置数据库连接 -->
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+        connectionURL="jdbc:mysql://106.13.140.106:3306/crm"
+        userId="root"
+        password="root">
+    </jdbcConnection>
+
+    <javaTypeResolver >
+      <property name="forceBigDecimals" value="false" />
+    </javaTypeResolver>
+	<!-- 配置java Model生成 -->
+    <javaModelGenerator targetPackage="com.kakarote.crm9.erp.busniess.model" targetProject=".\src\main\java">
+      <property name="enableSubPackages" value="true" />
+      <property name="trimStrings" value="true" />
+    </javaModelGenerator>
+	<!-- 配置mapper.xml文件生成 -->
+    <sqlMapGenerator targetPackage="mapper.busniessMapper"  targetProject=".\src\main\resources">
+      <property name="enableSubPackages" value="true" />
+    </sqlMapGenerator>
+	<!-- 配置Mapper.java 接口生成 -->
+    <javaClientGenerator type="XMLMAPPER" targetPackage="com.kakarote.crm9.erp.busniess.dao"  targetProject=".\src\main\java">
+      <property name="enableSubPackages" value="true" />
+    </javaClientGenerator> 
+    
+    <table tableName="business"></table>
+    <table tableName="business_change"></table>
+    <table tableName="business_product"></table>
+    <table tableName="business_status"></table>
+    <table tableName="business_type"></table>
+    <table tableName="contacts_business"></table>
+
+
+  </context>
+</generatorConfiguration>
