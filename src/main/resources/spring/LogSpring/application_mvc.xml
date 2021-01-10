@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+	http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+	http://www.springframework.org/schema/mvc
+    http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+	http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-4.3.xsd
+    ">
+    
+    <!-- 注解扫描 -->
+    <context:component-scan base-package="com.kakarote.crm9.erp.log"></context:component-scan>
+    
+    <!-- 创建 处理器映射器 处理器适配器 视图解析器 处理器 -->
+    <!-- 以注解形式来驱动 处理器映射器、 处理器适配器、处理器 -->
+    <mvc:annotation-driven></mvc:annotation-driven>
+	<!-- 视图解析器 - 渲染 - 响应给页面 --><!-- InternalResourceViewResolver 继承于 UrlBasedViewResolver -->   
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    	<property name="suffix" value=".jsp"></property>
+    </bean>
+	<!--上传配置 id的名字必须为multipartResolver 为了解析-->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="defaultEncoding" value="UTF-8"></property>
+		<!--总文件大小-->
+		<property name="maxInMemorySize" value="204800000" ></property>
+	</bean>
+
+	<!-- 拦截 静态资源（js、css..） 可配置多个-->
+<!--	<mvc:resources mapping="/log/**" location="/log/**"></mvc:resources>-->
+	
+	<!-- 拦截器 -->
+<!--	<mvc:interceptors>-->
+<!--		&lt;!&ndash;可配置多个mvc:interceptor&ndash;&gt;-->
+<!--		<mvc:interceptor>-->
+<!--			<mvc:mapping path="/**"/>-->
+<!--			<mvc:exclude-mapping path="index.do"/>&lt;!&ndash;排除映射&ndash;&gt;-->
+<!--			<mvc:exclude-mapping path="login.do"/>&lt;!&ndash;排除映射&ndash;&gt;-->
+<!--			&lt;!&ndash;<bean class="com.crx.quanxian.tools.MyInterceptor"></bean>&ndash;&gt;&lt;!&ndash;拦截器&ndash;&gt;-->
+<!--		</mvc:interceptor>-->
+<!--	</mvc:interceptors>-->
+	
+	
+</beans>

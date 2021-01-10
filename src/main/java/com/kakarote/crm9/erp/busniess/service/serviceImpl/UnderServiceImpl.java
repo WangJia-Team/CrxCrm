@@ -38,11 +38,9 @@ public class UnderServiceImpl implements UnderService {
 
 
     @Override
-    public String view(Business business, HttpServletRequest request) {
-        List<Business> list = mapper.selectByExample(new BusinessExample());
-        HttpSession session = request.getSession();
-        session.setAttribute("list", list);
-        return "redirect:shangji/sjview.jsp";
+    public List<Business> view(Business business, HttpServletRequest request) {
+        return  mapper.selectByExample(new BusinessExample());
+
     }
 
 
