@@ -24,6 +24,8 @@
     <result column="parent_id" jdbcType="INTEGER" property="parentId" />
     <result column="last_login_time" jdbcType="TIMESTAMP" property="lastLoginTime" />
     <result column="last_login_ip" jdbcType="VARCHAR" property="lastLoginIp" />
+    
+    
   </resultMap>
   <sql id="Example_Where_Clause">
     <!--
@@ -476,5 +478,7 @@
   <select id="selectByLoginUser" parameterType="com.kakarote.crm9.erp.admin.model.WjAdminUser" resultMap="BaseResultMap">
     select * from wj_admin_user where username = #{username} and password = #{password};
   </select>
+  
+  
   
 </mapper>

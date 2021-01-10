@@ -5,6 +5,9 @@ import com.kakarote.crm9.erp.admin.service.AdminDeptService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ * 部门ServiceImpl
+ */
 @Service
 public class AdminDeptServiceImpl implements AdminDeptService {
     
