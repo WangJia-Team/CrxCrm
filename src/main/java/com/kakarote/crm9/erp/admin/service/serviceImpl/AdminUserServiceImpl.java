@@ -90,9 +90,9 @@ public class AdminUserServiceImpl implements AdminUserService {
     @Override
     public String userView(HttpServletRequest request) {
         //查询所有员工
-        List<WjAdminUser> list = mapper.selectByExample(new WjAdminUserExample());
+        List<WjAdminUser> list = mapper.selectByUser();
         //查询所有部门
-        List<WjAdminDept> depts = deptMapper.selectByExample(new WjAdminDeptExample());
+//        List<WjAdminDept> depts = deptMapper.selectByExample(new WjAdminDeptExample());
 
 //        List<WjAdminDept> depts = new ArrayList<WjAdminDept>();
 //        WjAdminDeptExample example = new WjAdminDeptExample();
@@ -106,7 +106,7 @@ public class AdminUserServiceImpl implements AdminUserService {
 
         HttpSession session = request.getSession();
         session.setAttribute("userView", list);
-        session.setAttribute("depts", depts);
+//        session.setAttribute("depts", depts);
         return "redirect:/view/admin/view.jsp";
     }
 }

@@ -46,9 +46,7 @@
             <td>女</td>
         </c:if>
         <td>${u.email}</td>
-    <c:forEach items="${depts}" var="d">
-        <c:if test="${u.deptId eq d.deptId}"><td>${d.name}</td></c:if>
-    </c:forEach>
+        <td><c:forEach items="${u.depts}" var="d">${d.name} </c:forEach></td>
         <td>暂无</td>
         <td>暂无</td>
         <td>暂无</td>

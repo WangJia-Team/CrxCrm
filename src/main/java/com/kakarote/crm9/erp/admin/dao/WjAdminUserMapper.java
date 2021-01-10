@@ -98,4 +98,6 @@ public interface WjAdminUserMapper {
     int updateByPrimaryKey(WjAdminUser record);
     
     WjAdminUser selectByLoginUser(WjAdminUser user);
+
+    List<WjAdminUser> selectByUser();
 }
