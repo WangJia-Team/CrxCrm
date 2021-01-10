@@ -1,5 +1,8 @@
 package com.kakarote.crm9.erp.admin.model;
 
+/**
+ * 部门mapper
+ */
 public class WjAdminDept {
     /**
      *

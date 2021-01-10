@@ -1,5 +1,8 @@
 package com.kakarote.crm9.erp.admin.dao;
 
+/**
+ * Message
+ */
 public class Message {
     private String mess;
 

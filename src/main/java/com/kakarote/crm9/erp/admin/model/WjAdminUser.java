@@ -2,6 +2,9 @@ package com.kakarote.crm9.erp.admin.model;
 
 import java.util.Date;
 
+/**
+ * 用户mapper
+ */
 public class WjAdminUser {
     /**
      *

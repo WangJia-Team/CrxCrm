@@ -15,6 +15,7 @@
     ">
 
    <import resource="classpath:spring/ApprovalSpring/application_mvc.xml"/>
+   <import resource="classpath:spring/AdminSpring/application_mvc.xml"/>
 
 
     

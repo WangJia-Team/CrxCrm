@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * 查看员工1.0
+ */
 @Controller
 @RequestMapping("admin/")
 public class AdminUserController {

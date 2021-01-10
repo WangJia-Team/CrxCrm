@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * 用户登录
+ * 用户登录1.0
  */
 @Controller
 @RequestMapping("admin/")
 public class AdminLoginController {
-
+    
     @Autowired
     private AdminUserService service;
 

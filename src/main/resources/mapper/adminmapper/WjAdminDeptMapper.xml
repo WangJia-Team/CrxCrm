@@ -13,6 +13,7 @@
     <result column="num" jdbcType="INTEGER" property="num" />
     <result column="remark" jdbcType="VARCHAR" property="remark" />
   </resultMap>
+  
   <sql id="Example_Where_Clause">
     <!--
       WARNING - @mbg.generated
