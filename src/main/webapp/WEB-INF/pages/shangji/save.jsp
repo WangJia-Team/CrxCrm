@@ -53,11 +53,11 @@
             $("#bc").click(function () {
                 $.ajax({
                     type: "post",
-                    url: "${pageContext.request.contextPath}/save.do",
+                    url: "sjview.do",
                     dataType: "json",
                     data: {
                         bname: $("#bname").val(),
-                        cname:$("#cname").val(),
+                        cid:$("#cid").val(),
                         tid:$("#tid" ).val(),
                         isEnd:$("#isEnd").val(),
                         money:$("#money" ).val(),
@@ -67,8 +67,8 @@
                         cpmoney:$("#cpmoney" ).val()
                     },
                     success: function (data) {
-                        if (data.message == "success") {
-                            location = "/CrxCrm/shangji/sjview.do";
+                        if (data.mess == "success") {
+                            location = "save.do";
                         } else {
                             alert("错误");
                         }
@@ -87,12 +87,12 @@
 <body>
 <div class="right"></div>
 <div class="center">
-    <form action="" method="post">
+    <form action="shangji/sjview.do" method="post">
         <b style="margin:20px 50px 75px;">新建商机</b>
         <br>基本信息:</br>
         商机名称  :<input name="bname" id="bname" type="text" placeholder="请输入商机" style="width:200px; height:20px;" >
         -------------
-        客户名称:<input name="cname" id="cname" type="text" placeholder="请添加客户" style="width:200px; height:20px;" ></br>
+        客户名称:<input name="cid" id="cid" type="text" placeholder="请添加客户" style="width:200px; height:20px;" ></br>
         商机状态组:
         <select  style="width:200px; height:20px;" name="tid" id="tid">
         <option>电子产品销售流程</option>
@@ -109,7 +109,7 @@
 
         <textarea name="remark" id="remark" clos="20" rows="5" >备注:</textarea></br>
         产品:
-        <button type="button"  style="background-color: #00b7ee;float:right" >添加产品</button></br>
+        <button type="button"  style="background-color: #00b7ee;float:right" href="" >添加产品</button></br>
         整单折扣%:<input name="discountrate" id="discountrate" type="number" placeholder="请输入" style="width:75px; height:20px;" >
         ------------
         产品总金额:<input name="cpmoney" id="cpmoney" type="text" placeholder="请输入" style="width:75px; height:20px; " >元</br>

@@ -378,4 +378,8 @@
       discription = #{discription,jdbcType=VARCHAR}
     where proid = #{proid,jdbcType=INTEGER}
   </update>
+  
+  <select id="selectAll" resultMap="BaseResultMap">
+    select * from product;
+  </select>
 </mapper>

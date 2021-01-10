@@ -1,27 +1,20 @@
 package com.kakarote.crm9.erp.busniess.service.serviceImpl;
-
-import com.kakarote.crm9.erp.admin.dao.Message;
-import com.kakarote.crm9.erp.admin.model.WjAdminUser;
-import com.kakarote.crm9.erp.admin.model.WjAdminUserExample;
+import com.kakarote.crm9.erp.busniess.dao.Message;
 import com.kakarote.crm9.erp.busniess.dao.BusinessMapper;
 import com.kakarote.crm9.erp.busniess.model.Business;
 import com.kakarote.crm9.erp.busniess.model.BusinessExample;
 import com.kakarote.crm9.erp.busniess.service.UnderService;
-import org.apache.ibatis.session.SqlSession;
-import org.mybatis.generator.api.MyBatisGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-import java.io.IOException;
-import java.util.ArrayList;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @Service
 public class UnderServiceImpl implements UnderService {
     @Autowired
-    private BusinessMapper mapper;
+    private BusinessMapper businessMapper   ;
 
     /**
      * 新增员工
@@ -39,7 +32,7 @@ public class UnderServiceImpl implements UnderService {
 
     @Override
     public List<Business> view(Business business, HttpServletRequest request) {
-        return  mapper.selectByExample(new BusinessExample());
+        return  businessMapper.selectByExample(new BusinessExample());
 
     }
 
@@ -47,14 +40,39 @@ public class UnderServiceImpl implements UnderService {
     /**
      *
      * @param business
-     * @param request
+     * @param
      * @return
      */
+//    @Override
+//    public Message save(Business business) {
+//        mapper.insert(business);
+//        Message  mess  =  new Message();
+//        mess.setMess("success");
+//        return mess;
+//    }
+
+//    @Override
+//    public Message save(Business business) {
+//        Message mess = new Message();
+//        String  time =  new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+//        business.setDealDate(time);
+//        business.setCreateTime(time);
+//        business.setNextTime(time);
+//        try {
+//            businessMapper.insert(business);
+//            mess.setMess("success");
+//        } catch (Exception e) {
+//            mess.setMess("系统错误");
+//        }
+//        return mess;
+//    }
     @Override
-    public Message save(Business business,HttpServletRequest request) {
-        mapper.insert(business);
-        Message  message  =  new Message();
-        message.setMess("success");
-        return message;
+    public void save(Business business, HttpServletRequest request){
+        String  time =  new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+       business.setDealDate(time);
+       business.setCreateTime(time);
+       business.setNextTime(time);
+       business.setUpdateTime(time);
+        businessMapper.insert(business);
     }
 }
